@@ -1,0 +1,19 @@
+{
+  "name": "warcardgame",
+  "version": "1.0.0",
+  "description": "War card game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsvang87/WarCardGame.git"
+  },
+  "author": "Visay Vang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsvang87/WarCardGame/issues"
+  },
+  "homepage": "https://github.com/vsvang87/WarCardGame#readme"
+}
