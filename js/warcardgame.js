@@ -10,7 +10,10 @@ function handleClick() {
   fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
     .then((res) => res.json())
     .then((data) => {
+      //display remaing cards message
+      remaingCards.innerHTML = `Remaining Cards: ${data.remaining}`;
       deckId = data.deck_id;
+      console.log(deckId);
     });
 }
 
@@ -32,6 +35,11 @@ drawCardBtn.addEventListener("click", () => {
       console.log(winnerText);
       //display remaing cards message
       remaingCards.innerHTML = `Remaining Cards: ${data.remaining}`;
+
+      //checking when card runs out and disabling draw button if its true
+      if (data.remaining === 0) {
+        drawCardBtn.disabled = true;
+      }
     });
 });
 
