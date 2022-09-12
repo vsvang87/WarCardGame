@@ -1,9 +1,13 @@
 let deckId;
+let computerScore = 0;
+let myScore = 0;
 const cardsContainer = document.getElementById("cards");
 const newDeckBtn = document.getElementById("new-deck");
 const drawCardBtn = document.getElementById("draw-cards");
 const message = document.getElementById("message");
 const remaingCards = document.getElementById("remaining-cards");
+const computerScoreEl = document.getElementById("computer-score");
+const myScoreEl = document.getElementById("my-score");
 
 //api call for random cards
 function handleClick() {
@@ -68,9 +72,17 @@ function determineCardWinner(card1, card2) {
 
   //determine if you win or lose
   if (card1ValueIndex > card2ValueIndex) {
-    return (message.innerHTML = "Top card win!");
+    //keep computer score
+    computerScore++;
+    //add score to html
+    computerScoreEl.innerHTML = `Computer Score: ${computerScore}`;
+    return (message.innerHTML = "Computer Wins!");
   } else if (card1ValueIndex < card2ValueIndex) {
-    return (message.innerHTML = "Bottom card win!");
+    //keep my score
+    myScore++;
+    //add score to html
+    myScoreEl.innerHTML = `My Score: ${myScore}`;
+    return (message.innerHTML = "You Wins!");
   } else {
     return (message.innerHTML = "Draw!");
   }
